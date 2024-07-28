@@ -1,19 +1,20 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import Passenger from '@/types/Passenger'
+
 defineProps<{
   passenger: Passenger
 }>()
+
 </script>
 
 <template>
-  <div class="passenger-class">
+  <RouterLink class="passenger-link" :to="{name: 'passenger-detail-view', params: { _id: passenger._id}}">
     <div class="passenger-card">
       <p><b>ID:</b> {{ passenger._id }}</p>
       <p><b>Name:</b> {{ passenger.name }}</p>
-      <p><b>Trips</b> {{ passenger.trips }}</p>
+      <p><b>Trips:</b> {{ passenger.trips }}</p>
     </div>
-  </div>
+  </RouterLink>
 </template>
 
 <style scoped>
@@ -29,5 +30,10 @@ defineProps<{
 .passenger-card:hover {
   transform: scale(1.01);
   box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.passenger-link {
+  text-decoration: none;
+  color: #2c3e50;
 }
 </style>
