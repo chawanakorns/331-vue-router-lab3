@@ -4,11 +4,13 @@ import Passenger from '@/types/Passenger'
 defineProps<{
   passenger: Passenger
 }>()
-
 </script>
 
 <template>
-  <RouterLink class="passenger-link" :to="{name: 'passenger-detail-view', params: { _id: passenger._id}}">
+  <RouterLink
+    class="passenger-link"
+    :to="{ name: 'passenger-detail-view', params: { _id: passenger._id } }"
+  >
     <div class="passenger-card">
       <p><b>ID:</b> {{ passenger._id }}</p>
       <p><b>Name:</b> {{ passenger.name }}</p>

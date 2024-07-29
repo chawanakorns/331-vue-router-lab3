@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
-import PassengerCard from '@/components/PassengerCard.vue';
-import PassengerService from '@/services/PassengerService';
+import { ref, onMounted } from 'vue'
+import PassengerCard from '@/components/PassengerCard.vue'
+import PassengerService from '@/services/PassengerService'
 
-const passengers = ref([]);
+const passengers = ref([])
 
 onMounted(async () => {
   try {
-    const response = await PassengerService.getPassengers();
-    passengers.value = response.data.data;
+    const response = await PassengerService.getPassengers()
+    passengers.value = response.data.data
   } catch (error) {
-    console.error('Failed to fetch passengers', error);
+    console.error('Failed to fetch passengers', error)
   }
-});
+})
 </script>
 
 <template>
@@ -21,6 +21,4 @@ onMounted(async () => {
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
