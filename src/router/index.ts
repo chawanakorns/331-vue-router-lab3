@@ -41,5 +41,12 @@ const router = createRouter({
     }
   ]
 })
+router.beforeEach(() => {
+  nProgress.start()
+})
+
+router.afterEach(() => {
+  nProgress.done()
+})
 
 export default router

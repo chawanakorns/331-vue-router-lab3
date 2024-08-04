@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import 'nprogress/nprogress.css'
 </script>
 
 <template>
@@ -97,5 +98,4 @@ nav a:first-of-type {
     animation: yellofade 3s ease-in-out;
   }
 }
-
 </style>
