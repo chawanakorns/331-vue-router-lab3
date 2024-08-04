@@ -7,6 +7,13 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
+#layout {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 header {
   line-height: 1.5;
   max-height: 100vh;
@@ -24,12 +31,19 @@ nav {
   margin-top: 2rem;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+nav {
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
 }
 
 nav a {
@@ -68,5 +82,20 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
+
+  @keyframes yellofade {
+    from {
+      background-color: yellow;
+    }
+
+    to {
+      background-color: transparent;
+    }
+  }
+
+  #flashMessage {
+    animation: yellofade 3s ease-in-out;
+  }
 }
+
 </style>
