@@ -4,7 +4,14 @@ import 'nprogress/nprogress.css'
 </script>
 
 <template>
-  <RouterView />
+  <div id="layout">
+    <header>
+      <div class="wrapper">
+      </div>
+    </header>
+
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>
